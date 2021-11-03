@@ -1,0 +1,74 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{clays_notes}
+
+\newcommand\R[1]{\mathbb{R}^{#1}}
+\newcommand\C[1]{\mathbf{C^{#1}}}
+\newcommand\F[1]{\mathbf{F^{#1}}}
+\newcommand\U{\mathbf{U}}
+\renewcommand\S{\mathcal{S}}
+\renewcommand\u{\mathbf{u}}
+\newcommand\V{\mathbf{V}}
+\newcommand\W{\mathbf{W}}
+
+
+% FONT STYLES
+
+\title{Linear Algebra Done Right \\ Axler, Sheldon}
+\author{Notes by:  \\ Clay Curry}
+\date{}
+
+\begin{document}
+
+\section{Probability}
+Probability is a number that quantifies the likelihood of a given event when it is not yet known whether the event will happen or not. This definition is circular because it uses the concept of likelihood, which is a synonym for probability. Nonetheless, we can use it as a starting point. It highlights two important facts:
+\points{probablility refers to an event;}
+{probablility is a number.}
+\noindent
+By elaborating on these two facts, we will give an (almost entirely) rigorous definition of probability. 
+
+\subsection{Sample space, sample points and events}
+\vspace{10 pt}
+
+The first thing we do when we start thinking about the probability of an event is to list \textbf{a number of things that could possibly happen}. The things in this list form a set, which we denote by $\Omega$.
+
+\definition{Experiment, Sample Space}
+{An \textbf{experiment} or \textbf{trial} (see below) is any procedure that can be infinitely repeated and has a well-defined set of possible outcomes, known as the \textbf{sample space} and usually denoted by $\Omega$. For a set of outcomes $\Omega$ to be a sample space, $\Omega$ must satisfy the following points
+\points{\textbf{Mutually exclusive outcomes.} \hspace{5 pt} Only one of the things in $\Omega$ can happen. That is, if $\omega \in \Omega$ happens, then none of the things in the set $\{ \bar \omega \in \Omega : \bar \omega \ne \omega \}$ can happen.}
+{\textbf{Exhaustive outcomes.} \hspace{5 pt} At least one of the things in $\Omega$ will happen.}
+
+}
+
+Random experiments are often conducted repeatedly, so that the collective results may be subjected to statistical analysis. A fixed number of repetitions of the same experiment can be thought of as a composed experiment, in which case the individual repetitions are called \textbf{trials}. 
+
+\definition{Sample point}
+{An element $\omega \in \Omega$ is called a \textbf{sample point}, or possible outcome.}
+
+\definition{Realized outcome}
+{When we learn that $\omega \in \Omega$ has happened, $\omega$ is called the \textbf{realized outcome}.}
+
+\definition{Event}
+{A subset $E \subseteq \Omega$ is called an event. $E$ is a \textit{sigma algebra} on $\Omega$, which is defined below.}
+
+\subsection{Space of Events}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

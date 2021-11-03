@@ -1,0 +1,115 @@
+%%% PAGE SETUP
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=20mm} % for example, change the margins to 2 inches all round
+
+%%% PACKAGES
+\usepackage{amsthm} % American Mathematical Society: typesetting theorems 
+\usepackage{amsmath} % American Mathematical Society: 
+\usepackage{amssymb} % American Mathematical Society: typesetting math symbols
+\usepackage[english]{babel} % These packages are all incorporated in the memoir class to one degree or another...
+\usepackage{graphicx} % support the \includegraphics command and options
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{sectsty}
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{mathtools}
+\usepackage{lipsum}
+\usepackage[skins]{tcolorbox}
+\usepackage{fancybox}
+\usepackage{setspace}
+
+%%% Reserved Characters
+% The following symbols are reserved characters that either have  special meaning under LaTeX or are unavailable in all the fonts:
+% # $ % ^ & _ { } ~ \
+% \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash{}
+
+
+%%% PACKAGE SETUP (sectsty) - SECTION TITLE APPEARANCE
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+% NUMBERING and SECTIONING
+
+% LaTeX provides 7 levels of depth for defining sections (see table below); these are used to automatically
+% speficy section numbering for text and TOC. Each section in this table is a subsection of the one above it.
+
+% |		Command 							| level | 		Comment				|
+% |----------------------------------------	|------	|--------------------------	|
+% |    \part{''part''}						|  -1	| 	not in letters			|
+% |	   \chapter{''chapter''}				| 	0	| 	only books and reports	|
+% |	   \section{''section''}				| 	1	| 	not in letters 			|
+% |	   \subsection{''subsection''}			| 	2	| 	not in letters 			|
+% |	   \subsubsection{''subsubsection''}	| 	3	| 	not in letters 			|
+% |	   \paragraph{'paragraph''}				| 	4	| 	not in letters 			|
+% |	   \subparagraph{''subparagraph''}		| 	5	| 	not in letters 			|
+
+% To manually assign the TOC name of a section, specify it in brackets. e.g. \section[Condensed Name]{A Really Long Section Name}
+\setcounter{secnumdepth}{2} % numbers up to subsection in numbering
+\setcounter{tocdepth}{2} % includes up to subsections in TOC
+
+
+%%% NOTATIONAL SHORTCUTS
+\newcommand\mathdiv[1]{
+$$
+#1
+$$
+}
+
+% DEFINITION
+\definecolor{defs-back}{RGB}{246,244,231}
+\definecolor{defs-frame}{RGB}{253,248,152}
+\newcommand\definition[2]{
+\begin{tcolorbox}[colback=defs-back,colframe=defs-frame,coltitle=black,title=\textbf{Definition: #1}]
+#2
+\end{tcolorbox}}
+
+% THEOREM
+\definecolor{thms-frame}{RGB}{255,138,138}
+\definecolor{thms-back}{RGB}{255,230,230}
+\newcommand\theorem[3]{
+\begin{tcolorbox}[colback=thms-back,colframe=thms-frame,coltitle=black,title=\textbf{Theorem: #1}]
+#2
+\end{tcolorbox}
+Proof:
+#3
+\hfill \ensuremath{\Box}
+}
+
+% PROPERTY
+\definecolor{prop-frame}{RGB}{150,169,220}
+\definecolor{prop-back}{RGB}{217,245,254}
+\newcommand\property[2]{
+\begin{tcolorbox}[colback=prop-back,colframe=prop-frame,coltitle=black,title=\textbf{Property: #1}]%
+#2
+\end{tcolorbox}
+}
+
+% EXAMPLE - Colorbox
+\definecolor{exam-frame}{RGB}{191,191,191}
+\definecolor{exam-back}{RGB}{250,250,250}
+\newcommand\example[2]{
+\begin{tcolorbox}[colback=exam-back,colframe=exam-frame,coltitle=black,title=\textbf{Example: #1}]%
+#2
+\end{tcolorbox}
+}
+
+
+
+% LISTS EASY TO READ
+\makeatletter
+% This code can use @ in macro names
+\newcommand{\points}[1]{%
+\begin{itemize}
+\item #1 \checknextarg
+}
+\newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenextarg}{\end{itemize}}}
+\newcommand{\gobblenextarg}[1]{\item #1\@ifnextchar\bgroup{\gobblenextarg}{\end{itemize}}}
+
+\makeatother
+
